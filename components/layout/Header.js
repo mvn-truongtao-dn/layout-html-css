@@ -39,7 +39,6 @@ export default function Header() {
       targetRef.current.classList.add('collapse');
       targetRef.current.classList.add('show');
       targetRef.current.style.height = null;
-
     }, 400);
   };
   const handleCloseMenu = () => {
@@ -69,13 +68,14 @@ export default function Header() {
               <div className='logo'>
                 <Image src={logo} alt='images'></Image>
               </div>
-              <a
-                href='/'
-                className='click-show-icon'
-                onClick={handleClickRightContent}
-              >
-                <DashOutlined />
-              </a>
+              <Link href='/'>
+                <a
+                  className='click-show-icon'
+                  onClick={handleClickRightContent}
+                >
+                  <DashOutlined />
+                </a>
+              </Link>
               <button className='navbar-toggle'>
                 {activeMenu ? (
                   <CloseOutlined onClick={handleCloseMenu} />
@@ -124,7 +124,7 @@ export default function Header() {
                 </li>
                 <li className='single user-account'>
                   <a className='user'>
-                    <Image src={user}></Image>
+                    <Image src={user} alt="image"></Image>
                   </a>
                   <div className='user-account-wrapper'>
                     <h6 className='ac-title'>User Account</h6>

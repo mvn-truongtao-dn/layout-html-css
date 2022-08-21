@@ -18,7 +18,7 @@ export default function ChatButton() {
           <li className='chat-item'>
             <div className='chat-item-flex'>
               <div className='item-icon'>
-                <Image src={user}></Image>
+                <Image src={user} alt="image"></Image>
               </div>
               <div className='chat-contents'>
                 <Link href='/'>
@@ -31,7 +31,7 @@ export default function ChatButton() {
           <li className='chat-item'>
             <div className='chat-item-flex'>
               <div className='item-icon'>
-                <Image src={user}></Image>
+                <Image src={user} alt="image"></Image>
               </div>
               <div className='chat-contents'>
                 <Link href='/'>

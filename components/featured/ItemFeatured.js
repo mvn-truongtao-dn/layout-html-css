@@ -7,7 +7,7 @@ export default function ItemFeatured(props) {
       <div className='featured-image'>
         <Link href='/'>
           <a>
-            <Image src={props.item.image}></Image>
+            <Image src={props.item.image} alt="image"></Image>
           </a>
         </Link>
       </div>

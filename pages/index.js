@@ -67,7 +67,7 @@ export default function Home() {
                 </h1>
                 <p className='sub-title'>
                   Countrys most loved and trusted classified ad listing website
-                  classified ad.randomised words which don't look even slightly
+                  classified ad.randomised words which don&apos;t look even slightly
                   Browse thousand of items near you.
                 </p>
               </div>
@@ -170,7 +170,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='about-right'>
-                <Image src={ListImage.about} className='about-image'></Image>
+                <Image src={ListImage.about} className='about-image' alt='image'></Image>
               </div>
             </div>
           </div>

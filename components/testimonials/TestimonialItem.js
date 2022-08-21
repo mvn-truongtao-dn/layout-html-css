@@ -34,7 +34,7 @@ export default function TestimonialItem() {
       </div>
       <div className='testimonial-client'>
         <div className='client-image'>
-          <Image src={ListImage.client1}></Image>
+          <Image src={ListImage.client1} alt="image"></Image>
         </div>
         <div className='client-text'>
           <span className='client-name'>Harman Preet</span>

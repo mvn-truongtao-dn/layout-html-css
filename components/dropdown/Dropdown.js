@@ -118,6 +118,7 @@ export default function Dropdown() {
                                 src={submenu.image}
                                 width={100}
                                 height={80}
+                                alt="image"
                               ></Image>
                             </a>
                           </Link>

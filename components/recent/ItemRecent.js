@@ -9,7 +9,7 @@ export default function ItemRecent(props) {
       <div className='border-style style1'>
         <div className='item-recent mb-24'>
           <div className='recent-image'>
-            <Image src={props.item}></Image>
+            <Image src={props.item} alt="image"></Image>
           </div>
           <div className='featured-caption'>
             <h4>

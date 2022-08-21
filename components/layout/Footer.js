@@ -17,7 +17,7 @@ export default function Footer() {
               <div className='footer-widget'>
                 <div className='footer-tittle2'>
                   <div className='footer-logo'>
-                    <Image src={ListImage.logo2}></Image>
+                    <Image src={ListImage.logo2} alt="image"></Image>
                   </div>
                   <ul className='listing-logo'>
                     <li className='list-item fade-in-up'>

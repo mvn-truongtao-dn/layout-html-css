@@ -8,7 +8,7 @@ export default function ItemService(props) {
   return (
     <li className='item-service'>
       <div className='service-icon'>
-        <Image src={image}></Image>
+        <Image src={image} alt="image"></Image>
       </div>
       <div className='service-cap'>
         <h4>
