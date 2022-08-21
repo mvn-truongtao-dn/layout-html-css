@@ -1,0 +1,26 @@
+.anticon-plus-square {
+  font-size: 22px;
+}
+.icon {
+  @include pxRem(font-size, 22px);
+}
+.anticon-check {
+  color: #4caf50;
+  margin-right: 15px;
+  font-weight: 700;
+}
+.icon-footer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #6a66c1;
+  color: #fff;
+  @include pxRem(font-size, 20px);
+  @include pxRem(margin-right, 7px);
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  svg {
+    @include pxRem(margin-top, 9px);
+  }
+}

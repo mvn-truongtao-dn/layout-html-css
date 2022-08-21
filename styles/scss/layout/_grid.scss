@@ -14,8 +14,8 @@ $grid-columns: 12;
   }
 }
 // End mixins for build grid
-$grid-gutter: 10px;
-$container-width: 1200px;
+$grid-gutter: 40px;
+$container-width: 100%;
 .container {
   padding-left: $grid-gutter;
   padding-right: $grid-gutter;
@@ -41,6 +41,17 @@ $container-width: 1200px;
     padding-left: 0;
     padding-right: 0;
   }
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.p-l-r-12 {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 /* Grid for all screen

@@ -7,3 +7,10 @@
 .justify-content-between {
   justify-content: space-between;
 }
+.text-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.mb-24 {
+  @include pxRem(margin-bottom, 24px);
+}

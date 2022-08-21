@@ -5,10 +5,11 @@ body {
   font-family: $font-body;
   font-weight: map-get($font-weight, normal);
   font-size: $font-size-base;
-  letter-spacing: -.025em;
+  letter-spacing: 0;
+  line-height: 1.5;
 }
 p {
-  line-height: 1.45;
+  line-height: 1.6;
 }
 ul {
   list-style-type: none;
@@ -36,6 +37,7 @@ h3 {
 }
 h4 {
   font-size: map-get($h-font-size, h4);
+  line-height: 1.2;
 }
 h5 {
   font-size: map-get($h-font-size, h5);
