@@ -78,7 +78,7 @@ export default function Home() {
                   </h1>
                   <p className='sub-title'>
                     Countrys most loved and trusted classified ad listing
-                    website classified ad.randomised words which don&apos;t look
+                    website classified ad.ran-domised words which don&apos;t look
                     even slightly Browse thousand of items near you.
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function Home() {
                   <p className='sub-tittle'>
                     There are many variations of passages of Lorem Ipsum
                     available, but the majority have suffered alteration in some
-                    form, by injected humo or ran-domised words which don&apos;t
+                    form, by injected humo or randomised words which don&apos;t
                     look even slightlys
                   </p>
                 </div>
