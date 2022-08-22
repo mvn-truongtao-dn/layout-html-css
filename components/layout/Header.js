@@ -76,7 +76,7 @@ export default function Header() {
                   <DashOutlined />
                 </a>
               </Link>
-              <button className='navbar-toggle'>
+              <span className='navbar-toggle'>
                 {activeMenu ? (
                   <CloseOutlined onClick={handleCloseMenu} />
                 ) : (
@@ -84,7 +84,7 @@ export default function Header() {
                     <MenuOutlined onClick={handleOpenMenu} />
                   </>
                 )}
-              </button>
+              </span>
             </div>
             <div className='nav-wrapper'>
               <Dropdown />
