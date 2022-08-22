@@ -171,7 +171,7 @@ export default function Home() {
                   <p className='sub-tittle'>
                     There are many variations of passages of Lorem Ipsum
                     available, but the majority have suffered alteration in some
-                    form, by injected humo or randomised words which don&apos;t
+                    form, by injected humo or ran-domised words which don&apos;t
                     look even slightlys
                   </p>
                 </div>
