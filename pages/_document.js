@@ -7,10 +7,11 @@ export default class MyDocument extends Document {
         <Head>
           {/* link your fonts here */}
           <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-
-          <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+          <link
+            rel='preconnect'
+            href='https://fonts.gstatic.com'
+            crossorigin
+          />{' '}
           <link
             href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap'
             rel='stylesheet'
