@@ -21,7 +21,16 @@ import { ListImage } from '../assets/images';
 import ListRecent from '../components/recent/ListRecent';
 import TestimonialItem from '../components/testimonials/TestimonialItem';
 import Footer from '../components/layout/Footer';
+import 'slick-carousel/slick/slick.css';
+
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+
 import { useEffect, useRef } from 'react';
+import ItemFeatured from '../components/featured/ItemFeatured';
+import CarouselFeatured from '../components/carousel_featured';
+import CarouselPriceCard from '../components/carousel_pricecard';
+import CarouselTestimonial from '../components/carousel_testimonial';
 export default function Home() {
   const targetRef = useRef();
   const targetMoveMouse1 = useRef();
@@ -52,46 +61,50 @@ export default function Home() {
       targetMoveMouse2.current.style.visibility = 'visible';
     });
   }, []);
+
   return (
     <div>
       <Header></Header>
       <main>
         <div className='slider-area'>
-          <div className='container wrapper'>
-            <div className='slider-right'>
-              <div className='hero-caption'>
-                <h1 className='title'>
-                  <span className='title-lg'>Buy and sell</span>
-                  <br></br>
-                  <span className='line-brack'>anything you want</span>
-                </h1>
-                <p className='sub-title'>
-                  Countrys most loved and trusted classified ad listing website
-                  classified ad.randomised words which don&apos;t look even slightly
-                  Browse thousand of items near you.
-                </p>
-              </div>
-              <form className='search-box'>
-                <DropdownNationality
-                  class_name={'btn btn-custom'}
-                  btn_content={
-                    <>
-                      <AimOutlined />
-                      <span className='btn-country-content'>New York, USA</span>
-                      <DownOutlined />
-                    </>
-                  }
-                  content_dropdown={
-                    <>
-                      <input type='text' />
-                      <ul className='list'>
-                        <li className='option selected focus'>English</li>
-                        <li className='option'>Arabic</li>
-                      </ul>
-                    </>
-                  }
-                />
-                {/* <div className='select-form'>
+          <div className='container'>
+            <div className='wrapper p-l-r-12'>
+              <div className='slider-right'>
+                <div className='hero-caption'>
+                  <h1 className='title'>
+                    <span className='title-lg'>Buy and sell</span>
+                    <br></br>
+                    <span className='line-brack'>anything you want</span>
+                  </h1>
+                  <p className='sub-title'>
+                    Countrys most loved and trusted classified ad listing
+                    website classified ad.randomised words which don&apos;t look
+                    even slightly Browse thousand of items near you.
+                  </p>
+                </div>
+                <form className='search-box'>
+                  <DropdownNationality
+                    class_name={'btn btn-custom'}
+                    btn_content={
+                      <>
+                        <AimOutlined />
+                        <span className='btn-country-content'>
+                          New York, USA
+                        </span>
+                        <DownOutlined />
+                      </>
+                    }
+                    content_dropdown={
+                      <>
+                        <input type='text' />
+                        <ul className='list'>
+                          <li className='option selected focus'>English</li>
+                          <li className='option'>Arabic</li>
+                        </ul>
+                      </>
+                    }
+                  />
+                  {/* <div className='select-form'>
                   <a href='' className='btn-dropdown-country'>
                     <AimOutlined />
                     <span className='btn-country-content'>New York, USA</span>
@@ -99,27 +112,28 @@ export default function Home() {
                   </a>
                   <div className='dropdown-country-content'></div>
                 </div> */}
-                <div className='search-box-wrapper'>
-                  <input type='text' placeholder='Search...' />
-                </div>
-                <div className='search-form'>
-                  <button className='btn'>
-                    <SearchOutlined className='icon' />
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div className='slider-left'>
-              <div className='hero-man'>
-                <Image src={hero_man} alt='image' />
-                <div className='shape-hero shape-hero1'>
-                  <Image src={heroShape1} alt='image' />
-                </div>
-                <div className='shape-hero shape-hero2'>
-                  <Image src={heroShape2} alt='image' />
-                </div>
-                <div className='shape-hero shape-hero3'>
-                  <Image src={heroShape3} alt='image' />
+                  <div className='search-box-wrapper'>
+                    <input type='text' placeholder='Search...' />
+                  </div>
+                  <div className='search-form'>
+                    <button className='btn'>
+                      <SearchOutlined className='icon' />
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div className='slider-left'>
+                <div className='hero-man'>
+                  <Image src={hero_man} alt='image' />
+                  <div className='shape-hero shape-hero1'>
+                    <Image src={heroShape1} alt='image' />
+                  </div>
+                  <div className='shape-hero shape-hero2'>
+                    <Image src={heroShape2} alt='image' />
+                  </div>
+                  <div className='shape-hero shape-hero3'>
+                    <Image src={heroShape3} alt='image' />
+                  </div>
                 </div>
               </div>
             </div>
@@ -137,10 +151,11 @@ export default function Home() {
         </div>
         <div className='listing-featured p-l-r-12'>
           <div className='container'>
-            <Carousel
+            {/* <Carousel
               section_title='Featured listings'
               nameclass='listing-featured'
-            ></Carousel>
+            ></Carousel> */}
+            <CarouselFeatured />
           </div>
         </div>
         <div className='about-area'>
@@ -156,8 +171,8 @@ export default function Home() {
                   <p className='sub-tittle'>
                     There are many variations of passages of Lorem Ipsum
                     available, but the majority have suffered alteration in some
-                    form, by injected humo or randomised words which don&apos;t look
-                    even slightlys
+                    form, by injected humo or randomised words which don&apos;t
+                    look even slightlys
                   </p>
                 </div>
                 <div className='btn-wrapper'>
@@ -170,7 +185,11 @@ export default function Home() {
                 </div>
               </div>
               <div className='about-right'>
-                <Image src={ListImage.about} className='about-image' alt='image'></Image>
+                <Image
+                  src={ListImage.about}
+                  className='about-image'
+                  alt='image'
+                ></Image>
               </div>
             </div>
           </div>
@@ -189,19 +208,21 @@ export default function Home() {
         </div>
         <div className='pricing-card'>
           <div className='container'>
-            <Carousel
+            {/* <Carousel
               section_title='Post and Promote Your Listings'
               nameclass='pricing-card'
-            ></Carousel>
+            ></Carousel> */}
+            <CarouselPriceCard />
           </div>
         </div>
         <div className='testimonials'>
           <div className='container'>
             <div className='section-padding'>
-              <Carousel
+              {/* <Carousel
                 section_title='Testimonials'
                 nameclass='testimonials'
-              ></Carousel>
+              ></Carousel> */}
+              <CarouselTestimonial />
             </div>
           </div>
         </div>

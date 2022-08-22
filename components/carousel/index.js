@@ -245,16 +245,13 @@ export default function Carousel(props) {
     setValue2(location.current);
   };
   useEffect(() => {
-    // setInterval(next_button(316, 3600), 5000);
-    // return
-    const interval = setInterval(next_button, 5000);
-    const interval2 = setInterval(next_button2, 5000);
+    // const interval = setInterval(next_button, 5000);
+    // const interval2 = setInterval(next_button2, 5000);
 
-    return () => {
-      clearInterval(interval);
-      clearInterval(interval2);
-    };
-    // setInterval(next_button(340, 4080,location), 1000);
+    // return () => {
+    //   clearInterval(interval);
+    //   clearInterval(interval2);
+    // };
   }, []);
   console.log(value);
 
@@ -305,9 +302,8 @@ export default function Carousel(props) {
             ))}
           </div>
         )}
-        {
-          nameclass === 'testimonials' && (
-            <div
+        {nameclass === 'testimonials' && (
+          <div
             className='slick-track'
             ref={slick_track2}
             style={{ width: '4760px', transform: `translateX(-${value2}px)` }}
@@ -316,8 +312,7 @@ export default function Carousel(props) {
               <TestimonialItem key={item} />
             ))}
           </div>
-          )
-        }
+        )}
       </div>
     </>
   );

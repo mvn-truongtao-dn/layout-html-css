@@ -202,3 +202,43 @@
     width: 30px;
   }
 }
+.slick-slider {
+  .slick-next {
+    right: 14px;
+    top: -80px;
+    &::before {
+      content: ">";
+    }
+  }
+  .slick-prev {
+    right: 80px;
+    left: unset;
+    top: -80px;
+    &::before {
+      content: "<";
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    display: block;
+    width: 52px;
+    background: transparent;
+    border: 1px solid #EAECF0;
+    height: 52px;
+    padding: 0;
+    transform: translate(0, -50%);
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    outline: none;
+    &::before {
+      display: inline-block;
+      color: #98A2B3;
+      margin-bottom: 6px;
+    }
+  }
+  
+}

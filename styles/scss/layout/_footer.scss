@@ -1,8 +1,17 @@
 .page-footer {
   background-color: #524eb7;
   color: #fff;
+  @include pxRem(padding, 0 0);
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    & > [class*='col-'] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
   .footer-wrapper {
-    @include pxRem(padding, 0 40);
+    // @include pxRem(padding, 0 0);
   }
   .footer-padding {
     @include pxRem(padding, 100 0 75 0);
@@ -100,6 +109,12 @@
 }
 
 @include respond-above(large) {
+  .page-footer {
+    @include pxRem(padding, 0 35);
+
+    .footer-wrapper {
+    }
+  }
   .col-3 {
     width: 25%;
   }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ListImage } from '../../assets/images';
 export default function ItemFeatured(props) {
   return (
-    <div className='item-featured slick-slide'>
+    <div className='item-featured'>
       <div className='featured-image'>
         <Link href='/'>
           <a>

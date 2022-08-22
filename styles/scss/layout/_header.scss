@@ -401,9 +401,15 @@
   .logo {
     max-width: 160px;
   }
-  .container {
-    @include pxRem(padding-left, 15);
+  .page-header {
+    .container {
+      @include pxRem(padding-left, 15);
     @include pxRem(padding-right, 15);
+    }
+  }
+  .container {
+    @include pxRem(padding-left, 0);
+    @include pxRem(padding-right, 0);
   }
 }
 @include respond-between(large, largest) {

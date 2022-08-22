@@ -238,12 +238,16 @@
 }
 .slick-list {
   overflow: hidden;
+  .slick-slide {
+    padding: 0 12px;
+  }
   .slick-track {
     position: relative;
     display: flex;
     transition: all 0.5s;
     .slick-slide {
-      @include pxRem(margin, 0 12px 0 12px);
+      // @include pxRem(margin, 0 4px 0 4px);
+      // @include pxRem(margin, 0 12px 0 12px);
       // &:first-child {
       //   @include pxRem(margin-left, 0);
       // }
@@ -251,7 +255,7 @@
   }
 }
 .item-featured {
-  width: 316px;
+  // width: 316px;
   .featured-image {
     width: 100%;
     span {
@@ -468,12 +472,12 @@
 }
 .pricing-card-item {
   @include pxRem(padding, 33px 23px);
-  @include pxRem(margin, 0px 12px 0px 12px);
+  // @include pxRem(margin, 0px 12px 0px 12px);
   border: 1px solid #d0d5dd;
   position: relative;
   background-color: #fff;
   border-radius: 12px;
-  width: 316px;
+  // width: 316px;
   box-shadow: 0px 1px 2px rgb(16 24 40 / 5%);
   .price-title {
     font-family: $heading-font;
@@ -515,12 +519,11 @@
 }
 .testimonial-item {
   @include pxRem(padding, 21px 20px 18px 18px);
-  @include pxRem(margin, 0px 12px 0px 12px);
+  // @include pxRem(margin, 0px 12px 0px 12px);
   border: 1px solid #d0d5dd;
   position: relative;
   background-color: none;
   border-radius: 12px;
-  width: 316px;
   position: relative;
   overflow: hidden;
   box-shadow: 0px 1px 2px rgb(16 24 40 / 5%);
@@ -608,9 +611,14 @@
       padding: 0 35px;
     }
   }
-  .item-featured {
-    width: 419px;
-  }
+}
+@include respond-between(wide, largest) {
+  // .slick-track {
+  //   width: 532% !important;
+  // }
+  // .item-featured {
+  //   width: 419px;
+  // }
 }
 @include respond-above(wide) {
   .about-area {
@@ -807,58 +815,7 @@
     }
   }
 }
-// .progress-parent {
-//   position: fixed;
-// right: 30px;
-// bottom: 30px;
-// height: 46px;
-// width: 46px;
-// cursor: pointer;
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// border-radius: 50px;
-// box-shadow: inset 0 0 0 2px #d0d0d4;
-// z-index: 1000;
-// transition: all 0.2s linear;
-// transform: rotate(-90deg);
-//   .progress_svg {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     .progress_svg-circle {
-//       width: 100%;
-//       height: 100%;
-//       fill: none;
-//       stroke-width: 10;
-//       stroke-dasharray: 440;
-//       stroke-dashoffset: 440;
-//       stroke: hsl(0, 0%, 100%);
-//       stroke-linecap: round;
-//       transform: translate(5px, 5px); // stroke-width / 2
-//     }
-//   }
-//   @function strokeDashoffset($num) {
-//     @return 440 - (440 * $num) / 100;
-//   }
-//   .shadow {
-//     filter: drop-shadow(0 0 5px $color-html);
-//   }
 
-//   .circle {
-//     animation: anim_circle-html 1s ease-in-out forwards;
-//   }
-//   @keyframes anim_circle-html {
-//     to {
-//       stroke-dashoffset: strokeDashoffset($porcent-html);
-//     }
-//   }
-//   &::after {
-//   }
-//   .anticon-arrow-up {
-//     color: #f76631;
-//   }
-// }
 .progress {
   position: fixed;
   right: 30px;
