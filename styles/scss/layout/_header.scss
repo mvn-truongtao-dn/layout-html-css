@@ -449,7 +449,7 @@
 }
 @include respond-below(largest) {
   .page-header {
-    @include pxRem(padding, 10 0 10 0);
+    @include pxRem(padding, 13 0 13 0);
   }
   .nav-wrapper {
     .navbar-nav {
@@ -499,6 +499,11 @@
   }
 }
 @include respond-between(large, largest) {
+  .page-header {
+    .container {
+      @include pxRem(padding, 0 35);
+    }
+  }
   .nav-wrapper {
     .dropdown {
       .dropdown-menu {
@@ -512,6 +517,7 @@
     }
   }
 }
+
 @include respond-between(wide, large) {
   .nav-wrapper {
     .dropdown {
@@ -521,6 +527,24 @@
             min-width: 534px;
             flex-wrap: wrap;
           }
+        }
+      }
+    }
+  }
+}
+@include respond-between(wide, largest) {
+  .page-header {
+    padding: 0;
+  }
+  .nav-wrapper {
+    .navbar-nav {
+      li {
+        &:nth-child(3) {
+          @include pxRem(padding, 10 15 !important);
+        }
+        a {
+          @include pxRem(padding, 0 7 !important);
+          @include pxRem(font-size, 14);
         }
       }
     }

@@ -39,9 +39,14 @@
   background: #fff;
   color: #344054;
   box-shadow: 0 1px 2px rgb(16 24 40 / 5%);
+  .anticon-menu {
+    padding: 0;
+    padding-left: 4px;
+  }
   .btn-content {
-    margin-right: 20px;
-    margin-left: 15px;
+    @include pxRem(padding-top, 2px);
+    margin-right: 19px;
+    margin-left: 16px;
   }
 }
 .btn-chat {
@@ -239,6 +244,10 @@
       color: #98a2b3;
       margin-bottom: 6px;
     }
+    &:hover {
+      background-color: #FCDA69;
+      color: #333333;
+    }
   }
 }
 @include respond-below(small-medium) {
@@ -256,5 +265,10 @@
       right: 14px;
       top: -25px;
     }
+  }
+}
+@include respond-between(wide,large) {
+  .btn-white {
+    @include pxRem(padding, 26 34 26 18);
   }
 }
