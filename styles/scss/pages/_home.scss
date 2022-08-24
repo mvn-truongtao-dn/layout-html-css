@@ -22,6 +22,7 @@
       .title-lg {
         display: inline-block;
         position: relative;
+        padding: 0;
         &::before {
           content: '';
           width: 100%;
@@ -34,6 +35,7 @@
       }
       .line-brack {
         display: inline-block;
+        padding: 0;
       }
     }
     .sub-title {
@@ -620,6 +622,7 @@
   //   width: 419px;
   // }
 }
+
 @include respond-above(wide) {
   .about-area {
     .wrapper {
@@ -635,15 +638,28 @@
 }
 @include respond-above(large) {
   .about-area {
-    .about-left {
-      width: 58.33333%;
-    }
-    .about-right {
-      width: 41.66666667%;
+    .wrapper {
+      .about-left {
+        width: 58.33333%;
+      }
+      .about-right {
+        width: 41.66666667%;
+      }
     }
   }
 }
-
+@include respond-above(largest) {
+  .about-area {
+    .wrapper {
+      .about-left {
+        width: 41.6666667%;
+      }
+      .about-right {
+        width: 50%;
+      }
+    }
+  }
+}
 @include respond-between(wide, large) {
   .slider-area {
     .slider-right {
