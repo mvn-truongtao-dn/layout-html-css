@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick/lib/slider';
-import { ListImage } from '../../assets/images';
-import ItemFeatured from '../featured/ItemFeatured';
+import { ListImage } from '../../../assets/images';
+import ItemFeatured from '../../featured/ItemFeatured';
 var settings = {
   infinite: true,
   speed: 500,

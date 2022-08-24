@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick/lib/slider';
-import TestimonialItem from '../testimonials/TestimonialItem';
+import PricingCardItem from '../../pricing_card/PricingCardItem';
 var setting1 = {
   infinite: true,
   speed: 500,
@@ -37,18 +37,18 @@ var setting1 = {
 };
 const data2 = [1, 2, 3, 4, 5, 6, 78, 9, 10, 11, 12, 13, 14];
 
-export default function CarouselTestimonial() {
+export default function CarouselPriceCard() {
   return (
     <>
       <div className='carousel-header  p-l-r-12'>
         <div className='tittle-section'>
-          <h2 className='tittle'>Testimonials</h2>
+          <h2 className='tittle'>Post and Promote Your Listings</h2>
         </div>
       </div>
 
       <Slider {...setting1}>
         {data2.map((item) => (
-          <TestimonialItem key={item} />
+          <PricingCardItem key={item} />
         ))}
       </Slider>
     </>

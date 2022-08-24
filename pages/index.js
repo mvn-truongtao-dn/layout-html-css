@@ -15,30 +15,30 @@ import heroShape1 from '../assets/images/heroShape1.png';
 import heroShape2 from '../assets/images/heroShape2.png';
 import heroShape3 from '../assets/images/heroShape3.png';
 import ListServices from '../components/services/ListServices';
-import Carousel from '../components/carousel';
 import Link from 'next/link';
 import { ListImage } from '../assets/images';
 import ListRecent from '../components/recent/ListRecent';
-import TestimonialItem from '../components/testimonials/TestimonialItem';
 import Footer from '../components/layout/Footer';
 import 'slick-carousel/slick/slick.css';
 
 import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
 
 import { useEffect, useRef } from 'react';
 import ItemFeatured from '../components/featured/ItemFeatured';
-import CarouselFeatured from '../components/carousel_featured';
-import CarouselPriceCard from '../components/carousel_pricecard';
-import CarouselTestimonial from '../components/carousel_testimonial';
+import CarouselFeatured from '../components/carousel/carousel_featured';
+import CarouselPriceCard from '../components/carousel/carousel_pricecard';
+import CarouselTestimonial from '../components/carousel/carousel_testimonial';
 export default function Home() {
   const targetRef = useRef();
   const targetMoveMouse1 = useRef();
   const targetMoveMouse2 = useRef();
+  const imageRef = useRef(null);
+  const imageRef1 = useRef(null);
+  const target = useRef();
 
   useEffect(() => {
     const height = document.querySelector('#__next').offsetHeight;
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function (e) {
       const height_scroll = window.pageYOffset;
       if (height_scroll > 100) {
         targetRef.current.classList.add('show');
@@ -51,24 +51,51 @@ export default function Home() {
         #F76631 ${percent}%,
       #d0d0d4 0
     )`;
+      if (window.pageYOffset > 500) {
+        const array = document.querySelectorAll(
+          '.listing-services .item-service:nth-child(2n+1)'
+        );
+        for (let i = 0; i < array.length; i++) {
+          array[i].style.animation = 'show1 0.5s linear 1';
+        }
+      }
+      if (target.current.offsetTop < window.pageYOffset) {
+        document.querySelector('.about-area .tittle-section').style.animation =
+          'show1 0.5s linear 1';
+        console.log(document.querySelector('.about-area .tittle-section'));
+      }
     });
     window.addEventListener('mousemove', (e) => {
       // const location1 = e.target
-      console.log(e);
       targetMoveMouse1.current.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
       targetMoveMouse1.current.style.visibility = 'visible';
       targetMoveMouse2.current.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
       targetMoveMouse2.current.style.visibility = 'visible';
     });
+    imageRef.current.addEventListener('mousemove', (e) => {
+      console.log(e);
+      console.log(window.pageXOffset);
+      const number = e.layerX / e.layerY;
+      imageRef.current.style.transform = ` rotateX(${number}deg) rotateY(-${number}deg)`;
+    });
+    console.log(target.current.offsetTop);
   }, []);
+  const myRef = useRef(null);
+
+  const handleMoveHeaderPage = () => {
+    window.scrollTo({
+      top: myRef.current.offsetTop,
+      behavior: 'smooth',
+    });
+  };
 
   return (
-    <div>
+    <div ref={myRef}>
       <Header></Header>
       <main>
         <div className='slider-area'>
           <div className='container'>
-            <div className='wrapper p-l-r-12'>
+            <div className='wrapper'>
               <div className='slider-right'>
                 <div className='hero-caption'>
                   <h1 className='title'>
@@ -78,8 +105,8 @@ export default function Home() {
                   </h1>
                   <p className='sub-title'>
                     Countrys most loved and trusted classified ad listing
-                    website classified ad.ran-domised words which don&apos;t look
-                    even slightly Browse thousand of items near you.
+                    website classified ad.ran-domised words which don&apos;t
+                    look even slightly Browse thousand of items near you.
                   </p>
                 </div>
                 <form className='search-box'>
@@ -123,8 +150,12 @@ export default function Home() {
                 </form>
               </div>
               <div className='slider-left'>
-                <div className='hero-man'>
-                  <Image src={hero_man} alt='image' />
+                <div ref={imageRef} className='hero-man'>
+                  <Image
+                    src={hero_man}
+                    alt='image'
+                    className='image-animation'
+                  />
                   <div className='shape-hero shape-hero1'>
                     <Image src={heroShape1} alt='image' />
                   </div>
@@ -158,7 +189,7 @@ export default function Home() {
             <CarouselFeatured />
           </div>
         </div>
-        <div className='about-area'>
+        <div ref={target} className='about-area'>
           <div className='container'>
             <div className='wrapper p-l-r-12'>
               <div className='about-left'>
@@ -231,7 +262,11 @@ export default function Home() {
       <Footer></Footer>
       <div className='mouse-cursor cursor-outer' ref={targetMoveMouse1}></div>
       <div className='mouse-cursor cursor-inner' ref={targetMoveMouse2}></div>
-      <div className='progress per-25' ref={targetRef}>
+      <div
+        className='progress per-25'
+        ref={targetRef}
+        onClick={handleMoveHeaderPage}
+      >
         <div className='inner'>
           <ArrowUpOutlined />
         </div>

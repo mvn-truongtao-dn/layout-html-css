@@ -162,6 +162,9 @@
         @include pxRem(padding, 16px 17px);
         display: block;
         @include pxRem(font-size, 15px);
+        &:hover {
+          color: #fba260;
+        }
         .icon-link {
           margin-right: 10px;
           font-family: 'Source Sans Pro', sans-serif;
@@ -179,6 +182,42 @@
       color: #344054 !important;
       font-weight: 400;
       line-height: 70px;
+      &:nth-child(3) {
+        position: relative;
+        .sub-menu {
+          position: absolute;
+          min-width: 220px;
+          box-shadow: 0 0 15px 0 rgb(0 0 0 / 5%);
+          background-color: #ffffff;
+          z-index: 992;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.5s linear;
+          border-bottom: 2px solid map-get($map: $colors, $key: bg-orange);
+          li {
+            @include pxRem(font-size, 14);
+            line-height: 24px;
+            display: block;
+            border-bottom: 1px solid #d0d5dd;
+            &:hover {
+              background-color: map-get($map: $colors, $key: bg-orange);
+              a {
+                color: #fff;
+              }
+            }
+            a {
+              display: block;
+              @include pxRem(padding, 10 30);
+            }
+          }
+        }
+        &:hover {
+          .sub-menu {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
       a {
         padding: 10px 19px;
         color: #344054;
@@ -280,33 +319,55 @@
     }
     .user-account-wrapper {
       position: absolute;
-      top: 69px;
-      right: 75px;
+      top: 67px;
+      right: 0;
       width: 100%;
       border: 1px solid #f0f0f0;
       @include pxRem(padding-top, 20px);
       background-color: map-get($map: $colors, $key: white);
       @include pxRem(border-radius, 8px);
       width: 250px;
-      &:not(.active) {
+      z-index: 9999;
+      &.collapse {
+        &:not(.show) {
+          display: none;
+        }
+      }
+      &.collapsing {
         height: 0;
         overflow: hidden;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
-          z-index 0s linear 0.01s;
-      }
-      &.active {
-        height: 436px;
-        visibility: visible;
-        overflow: auto;
+        transition: height 0.35s linear;
       }
       .ac-title {
-        @include pxRem(padding, 0 15px 10px);
+        @include pxRem(padding, 0 15px 25);
+        @include pxRem(margin-top, 10);
       }
       .ac-item {
         @include pxRem(padding, 10px 15px);
         border-top: 1px solid #f0f0f0;
         border-top: 1px solid #f0f0f0;
+        line-height: 25px;
+        font-family: $font-body;
+        cursor: pointer;
+        color: map-get($map: $colors, $key: heading-color);
+        span {
+          @include pxRem(margin-right, 8);
+        }
+        &:not(:last-child):hover {
+          background-color: map-get($map: $colors, $key: bg-orange);
+          a {
+            color: #fff;
+          }
+        }
+        &:last-child:hover {
+          background-color: map-get($map: $colors, $key: bg-orange);
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+
+          a {
+            color: #fff;
+          }
+        }
       }
     }
   }
@@ -405,7 +466,7 @@
   .page-header {
     .container {
       @include pxRem(padding-left, 15);
-    @include pxRem(padding-right, 15);
+      @include pxRem(padding-right, 15);
     }
   }
   .container {

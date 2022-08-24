@@ -17,6 +17,7 @@ import Link from 'next/link';
 import user from '../../assets/images/user.png';
 import DropdownNationality from '../dropdown-nationality';
 import { useState, useRef } from 'react';
+import DropdownUser from '../dropdown_user';
 export default function Header() {
   const [active, setActive] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
@@ -103,6 +104,63 @@ export default function Header() {
                         <DownOutlined />
                       </a>
                     </Link>
+                    <ul className='sub-menu'>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href=''>
+                          <a>Home One</a>
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <a href=''>Contact</a>
@@ -123,7 +181,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className='single user-account'>
-                  <a className='user'>
+                  {/* <a className='user'>
                     <Image src={user} alt="image"></Image>
                   </a>
                   <div className='user-account-wrapper'>
@@ -154,7 +212,8 @@ export default function Header() {
                         </Link>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
+                  <DropdownUser />
                 </li>
                 <li className='single'>
                   <Link href='/'>
