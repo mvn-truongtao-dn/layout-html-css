@@ -58,6 +58,12 @@ export default function Home() {
         for (let i = 0; i < array.length; i++) {
           array[i].style.animation = 'show1 0.5s linear 1';
         }
+        const array1 = document.querySelectorAll(
+          '.listing-services .item-service:nth-child(2n)'
+        );
+        for (let i = 0; i < array1.length; i++) {
+          array1[i].style.animation = 'show5 0.5s linear 1';
+        }
       }
       if (target.current.offsetTop < window.pageYOffset) {
         document.querySelector('.about-area .tittle-section').style.animation =
