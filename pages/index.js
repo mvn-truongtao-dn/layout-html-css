@@ -33,6 +33,8 @@ export default function Home() {
   const targetMoveMouse1 = useRef();
   const targetMoveMouse2 = useRef();
   const imageRef = useRef(null);
+  const imageRef2 = useRef(null);
+
   const target = useRef();
 
   useEffect(() => {
@@ -83,7 +85,7 @@ export default function Home() {
     });
     const heightImage = imageRef.current.clientHeight;
     const widthImage = imageRef.current.clientWidth;
-    imageRef.current.addEventListener('mousemove', (e) => {
+    const hoverImage = (e,target) => {
       const xVal = e.layerX;
       const yVal = e.layerY;
       const yRotation = -15 * ((xVal - widthImage / 4) / widthImage);
@@ -98,9 +100,19 @@ export default function Home() {
         yRotation +
         'deg)';
 
-      imageRef.current.style.transform = string;
+        target.style.transform = string;
+    };
+    imageRef.current.addEventListener('mousemove', (e) => {
+      hoverImage(e, imageRef.current);
+    });
+    imageRef2.current.addEventListener('mousemove', (e) => {
+      hoverImage(e, imageRef2.current);
     });
     imageRef.current.addEventListener('mouseout', (e) => {
+      imageRef.current.style.transform =
+        'perspective(300px) scale(1) rotateX(0) rotateY(0)';
+    });
+    imageRef2.current.addEventListener('mouseout', (e) => {
       imageRef.current.style.transform =
         'perspective(300px) scale(1) rotateX(0) rotateY(0)';
     });
@@ -241,7 +253,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className='about-right'>
+              <div ref={imageRef2} className='about-right'>
                 <Image
                   src={ListImage.about}
                   className='about-image'

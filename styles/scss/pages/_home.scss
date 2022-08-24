@@ -4,7 +4,7 @@
   @include pxRem(padding, 110px 0 95px 0);
 }
 .slider-area {
-  @include pxRem(padding, 108px 0 120px 0);
+  @include pxRem(padding, 108px 0 100 0);
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -169,6 +169,7 @@
         border: none;
       }
       .service-icon {
+        line-height: 0;
         @include pxRem(margin-bottom, 19px);
         position: relative;
       }
@@ -176,9 +177,11 @@
         .title {
           @include pxRem(font-size, 28px);
           @include pxRem(margin-bottom, 6px);
+          font-family: $heading-font;
           font-weight: 400;
           color: map-get($map: $colors, $key: heading-color);
           line-height: 1.4;
+          display: inline-block;
           &:hover {
             color: map-get($map: $colors, $key: bg-orange);
             transition: color 0.2s linear;
@@ -281,6 +284,7 @@
 }
 .featured-caption {
   .featured-link {
+    padding: 0;
     font-family: $heading-font;
     font-weight: 500;
     color: map-get($map: $colors, $key: heading-color);
@@ -302,6 +306,7 @@
     @include pxRem(font-size, 20px);
     @include pxRem(margin-bottom, 18px);
     font-family: $heading-font;
+    padding: 0;
     color: map-get($map: $colors, $key: heading-color);
     font-weight: 500;
     display: block;
