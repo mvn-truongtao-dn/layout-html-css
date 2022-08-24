@@ -33,7 +33,6 @@ export default function Home() {
   const targetMoveMouse1 = useRef();
   const targetMoveMouse2 = useRef();
   const imageRef = useRef(null);
-  const imageRef1 = useRef(null);
   const target = useRef();
 
   useEffect(() => {
@@ -45,8 +44,12 @@ export default function Home() {
       } else {
         targetRef.current.classList.remove('show');
       }
+      // console.log((height_scroll+document.querySelector('.page-footer').offsetHeight)/(height/100));
 
-      const percent = (window.pageYOffset * 100) / (height - 800);
+      const percent =
+        (height_scroll / (document.body.clientHeight - window.innerHeight)) *
+        100;
+      console.log(percent);
       targetRef.current.style.backgroundImage = `conic-gradient(
         #F76631 ${percent}%,
       #d0d0d4 0
@@ -78,11 +81,28 @@ export default function Home() {
       targetMoveMouse2.current.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
       targetMoveMouse2.current.style.visibility = 'visible';
     });
+    const heightImage = imageRef.current.clientHeight;
+    const widthImage = imageRef.current.clientWidth;
     imageRef.current.addEventListener('mousemove', (e) => {
-      console.log(e);
-      console.log(window.pageXOffset);
-      const number = e.layerX / e.layerY;
-      imageRef.current.style.transform = ` rotateX(${number}deg) rotateY(-${number}deg)`;
+      const xVal = e.layerX;
+      const yVal = e.layerY;
+      const yRotation = -15 * ((xVal - widthImage / 4) / widthImage);
+
+      /* Calculate the rotation along the X-axis */
+      const xRotation = 15 * ((yVal - heightImage / 4) / heightImage);
+
+      const string =
+        'perspective(500px) rotateX(' +
+        xRotation +
+        'deg) rotateY(' +
+        yRotation +
+        'deg)';
+
+      imageRef.current.style.transform = string;
+    });
+    imageRef.current.addEventListener('mouseout', (e) => {
+      imageRef.current.style.transform =
+        'perspective(300px) scale(1) rotateX(0) rotateY(0)';
     });
     console.log(target.current.offsetTop);
   }, []);
