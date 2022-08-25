@@ -272,3 +272,10 @@
     @include pxRem(padding, 26 34 26 18);
   }
 }
+@include respond-below(medium) {
+  .btn-custom {
+    .btn-dropdown-language {
+      width: 100%;
+    }
+  }
+}

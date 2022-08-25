@@ -6,21 +6,6 @@ import { data } from '../../utils/data';
 export default function Dropdown() {
   const [isActive, setIsActive] = useState(false);
   const dropdown_content = useRef();
-  // const handleOpenDropdown = () => {
-  //   dropdown_content.current.style.overflow = 'auto';
-  //   if (isActive === false) {
-  //     dropdown_content.current.style.height = '445px';
-  //   } else {
-  //     dropdown_content.current.style.height = '0';
-  //   }
-  //   setIsActive(!isActive);
-  //   setTimeout(() => {
-  //     dropdown_content.current.style.height = null;
-  //     dropdown_content.current.style.display = 'block';
-
-  //     dropdown_content.current.style.overflow = null;
-  //   }, 1000);
-  // };
   const handleOpenDropdown = () => {
     setIsActive(!isActive);
 
@@ -44,7 +29,6 @@ export default function Dropdown() {
       setTimeout(() => {
         dropdown_content.current.classList.add('collapsing');
         dropdown_content.current.style.height = null;
-
       }, 100);
       setTimeout(() => {
         dropdown_content.current.classList.remove('collapse');
@@ -118,19 +102,15 @@ export default function Dropdown() {
                                 src={submenu.image}
                                 width={100}
                                 height={80}
-                                alt="image"
+                                alt='image'
                               ></Image>
                             </a>
                           </Link>
                         </div>
                         <div className='product-content'>
-                          <h4>
-                            <Link href='/'>
-                              <a className='submenu-title'>
-                                {submenu.subTitle}
-                              </a>
-                            </Link>
-                          </h4>
+                          <Link href='/'>
+                            <a className='submenu-title'>{submenu.subTitle}</a>
+                          </Link>
                           <div className='price'>
                             <h4 className='new-price'>{submenu.newPrice}</h4>
                             <span className='old-price'>

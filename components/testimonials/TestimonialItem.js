@@ -6,7 +6,7 @@ import {
 import Image from 'next/image';
 import React from 'react';
 import { ListImage } from '../../assets/images/index';
-export default function TestimonialItem() {
+const TestimonialItem = () => {
   return (
     <div className='testimonial-item'>
       <ul className='ratting-list'>
@@ -34,7 +34,7 @@ export default function TestimonialItem() {
       </div>
       <div className='testimonial-client'>
         <div className='client-image'>
-          <Image src={ListImage.client1} alt="image"></Image>
+          <Image src={ListImage.client1} alt='image'></Image>
         </div>
         <div className='client-text'>
           <span className='client-name'>Harman Preet</span>
@@ -43,4 +43,5 @@ export default function TestimonialItem() {
       </div>
     </div>
   );
-}
+};
+export default TestimonialItem;

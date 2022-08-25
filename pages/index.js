@@ -51,7 +51,6 @@ export default function Home() {
       const percent =
         (height_scroll / (document.body.clientHeight - window.innerHeight)) *
         100;
-      console.log(percent);
       targetRef.current.style.backgroundImage = `conic-gradient(
         #F76631 ${percent}%,
       #d0d0d4 0
@@ -73,7 +72,6 @@ export default function Home() {
       if (target.current.offsetTop < window.pageYOffset) {
         document.querySelector('.about-area .tittle-section').style.animation =
           'show1 0.5s linear 1';
-        console.log(document.querySelector('.about-area .tittle-section'));
       }
     });
     window.addEventListener('mousemove', (e) => {
@@ -85,7 +83,7 @@ export default function Home() {
     });
     const heightImage = imageRef.current.clientHeight;
     const widthImage = imageRef.current.clientWidth;
-    const hoverImage = (e,target) => {
+    const hoverImage = (e, target) => {
       const xVal = e.layerX;
       const yVal = e.layerY;
       const yRotation = -15 * ((xVal - widthImage / 4) / widthImage);
@@ -100,7 +98,7 @@ export default function Home() {
         yRotation +
         'deg)';
 
-        target.style.transform = string;
+      target.style.transform = string;
     };
     imageRef.current.addEventListener('mousemove', (e) => {
       hoverImage(e, imageRef.current);
@@ -116,7 +114,6 @@ export default function Home() {
       imageRef.current.style.transform =
         'perspective(300px) scale(1) rotateX(0) rotateY(0)';
     });
-    console.log(target.current.offsetTop);
   }, []);
   const myRef = useRef(null);
 

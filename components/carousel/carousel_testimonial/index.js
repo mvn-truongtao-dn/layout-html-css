@@ -35,9 +35,10 @@ var setting1 = {
     },
   ],
 };
-const data2 = [1, 2, 3, 4, 5, 6, 78, 9, 10, 11, 12, 13, 14];
+const data2 = [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14];
 
 export default function CarouselTestimonial() {
+
   return (
     <>
       <div className='carousel-header  p-l-r-12'>

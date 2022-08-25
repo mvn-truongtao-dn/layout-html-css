@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ItemService(props) {
-    const {image, title, quantity} = props.item
+    const {image, title, quantity} = props.item;
   return (
     <li className='item-service'>
       <div className='service-icon'>
